@@ -1,5 +1,4 @@
-$white: #fff;
-$gray: #999;
+
 $black: #000;
 $lightGray: #F9F9F9;
 // https://htmlacademy.ru/courses/53/run/4
@@ -8,13 +7,117 @@ $green: #2CC36C;
 $blue: #3498DB;
 $orange: #E67E22;
 
-$animationTime: .6s;
 $itemHeight: 12vh;
 $iconSize: 2.5rem;
 
 
+// midas colors
+
+$white: #fff;
 $dark-blue: #0A0E21;
 $gold: #E4B523;
+$gray: #444;
+
+// misc
+$tile-gutter: 15px;
+$container-width: 950px;
+$animationTime: .2s;
+
+// adjustments
+
+html {
+	font-size: 16px;
+}
+
+body {
+	font-family: 'Helvetica', sans-serif;
+	background-color: $dark-blue;
+	color: $white;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	display: inline-block;
+}
+
+a {
+	color: $white;
+	display: inline-block;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: $animationTime;
+
+	&:hover {
+		color: $gold;
+	}
+}
+
+// helpers
+
+@mixin container($max-width: $container-width, $padding-sides: $tile-gutter) {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: $max-width;
+	padding-left: $padding-sides;
+	padding-right: $padding-sides;
+
+	//@include breakpoint($bp-tablet) {
+	//	padding-left: $padding-sides*2;
+	//	padding-right: $padding-sides*2;
+	//}
+}
+
+.container {
+	@include container();
+}
+
+.container--inline {
+	font-size: 0;
+
+	& > * {
+		display: inline-block;
+		font-size: 1rem;
+	}
+}
+
+//.container--flex {
+//	display: flex;
+//	align-items: center;
+//}
+
+.btn {
+	border: 2px solid $gold;
+	border-radius: 120px;
+	color: $gold;
+	font-size: 1rem;
+	font-weight: 600;
+	padding: .625rem 1.25rem;
+	text-transform: none;
+
+	&:hover {
+		border-color: $white;
+		color: $white;
+	}
+}
+
+.btn--white {
+	color: $white;
+	border-color: $white;
+
+	&:hover {
+		border-color: $gold;
+		color: $gold;
+	}
+}
+
+.gold-text {
+	color: $gold;
+}
 
 %ellipsis {
 	overflow: hidden;
@@ -22,22 +125,198 @@ $gold: #E4B523;
 	white-space: nowrap;
 }
 
-html {
-	box-sizing: border-box;
-	font-size: 100%;
+// navigation
+
+.nav-top {
+	text-align: center;
+}
+
+.nav-top__list {
+	width: 40%;
+}
+
+.nav-top__link {
+	font-size: .875rem;
+	padding: 5px;
+}
+
+.logo {
+	display: inline-block;
+	padding: $tile-gutter;
+	max-width: 130px - $tile-gutter/2;
+	width: 20%;
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+// header
+
+.header {
+	text-align: center;
+	padding-bottom: 2rem;
+}
+
+.promo {
+	@include container(810px);
+	padding-bottom: 8.75rem;
+	padding-top: 8.75rem;
+}
+
+.promo__title {
+	font-size: 3.75rem;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+.promo__subtitle {
+	font-size: 1.5rem;
+	position: relative;
+
+	&:after {
+		bottom: -80px;
+		content: 'V';
+		font-size: 3rem;
+		position: absolute;
+		left: 50%;
+		margin-left: -1rem;
+	}
+}
+
+.timer {
+	@include container(640px, 0);
+	background-color: rgba($white, .05);
+	height: 8.75rem;
+	position: relative;
+}
+
+.timer__text {
+	border: 4px solid $gold;
+	border-radius: 4px;
+	font-size: 2.375rem;
 	height: 100%;
-	margin: 0;
-	padding: 0;
-	width: 100%;
+	line-height: 1.0;
+	padding: 10px 0;
+	position: absolute;
+	text-transform: uppercase;
+	width: 10.5rem;
 }
 
-body {
-	all: inherit;
-	font-family: 'Helvetica', sans-serif;
-	background-color: $dark-blue;
-	color: $white;
+.timer__text__big {
+	font-size: 4.56rem;
+	letter-spacing: .05em;
 }
 
-* {
-	box-sizing: inherit;
+.timer__main {
+	font-size: 3.5rem;
+	line-height: 8.75rem;
+	padding-left: 10.5rem;
+	white-space: nowrap;
+}
+
+.steps {
+	@include container(1270px, 0);
+	padding-bottom: 2rem;
+	padding-top: 15rem;
+	position: relative;
+
+	&:before {
+		background-color: rgba($white, .2);
+		content: '';
+		position: absolute;
+		left: 50%;
+		top: 2rem;
+		margin-left: -2px;
+		height: 10rem;
+		width: 4px;
+	}
+}
+
+.step {
+	padding: 10px $tile-gutter;
+	position: relative;
+	vertical-align: top;
+	width: 33%;
+
+	&:before,
+	&:after {
+		background-color: rgba($white, .2);
+		content: '';
+		position: absolute;
+		top: 1rem;
+		height: 4px;
+		width: 20%;
+	}
+
+	&:before {
+		left: 5%;
+	}
+
+	&:after {
+		right: 5%;
+	}
+
+	&:first-child:before,
+	&:last-child:after {
+		width: 0;
+	}
+}
+
+.step__number {
+	background-color: $white;
+	color: $dark-blue;
+	font-weight: bold;
+	display: inline-block;
+}
+
+.step__title {
+	color: $gold;
+	display: inline-block;
+	padding-left: 30px;
+	position: relative;
+
+	&:before {
+		content: 'V';
+		left: 0;
+		position: absolute;
+	}
+}
+
+.step__text {
+	line-height: 1.5;
+}
+
+
+// sign up
+
+.sign-up {
+	background-color: $white;
+	padding: 2rem 0;
+	text-align: center;
+}
+
+.sign-up__title {
+	color: $gold;
+	text-transform: uppercase;
+}
+
+.input-wrap {
+	border: 2px solid $gray;
+	padding: 10px;
+	width: 25%;
+	
+	label {
+		color: #000;
+		display: inline-block;
+		width: 30%;
+		margin-right: -7px;
+	}
+
+	input {
+		border: none;
+		width: 70%;
+		display: inline-block;
+	}
 }

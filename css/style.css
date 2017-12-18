@@ -1,16 +1,218 @@
 html {
-  box-sizing: border-box;
-  font-size: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  width: 100%; }
+  font-size: 16px; }
 
 body {
-  all: inherit;
   font-family: 'Helvetica', sans-serif;
   background-color: #0A0E21;
   color: #fff; }
 
-* {
-  box-sizing: inherit; }
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+li {
+  display: inline-block; }
+
+a {
+  color: #fff;
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.2s; }
+  a:hover {
+    color: #E4B523; }
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 950px;
+  padding-left: 15px;
+  padding-right: 15px; }
+
+.container--inline {
+  font-size: 0; }
+  .container--inline > * {
+    display: inline-block;
+    font-size: 1rem; }
+
+.btn {
+  border: 2px solid #E4B523;
+  border-radius: 120px;
+  color: #E4B523;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: .625rem 1.25rem;
+  text-transform: none; }
+  .btn:hover {
+    border-color: #fff;
+    color: #fff; }
+
+.btn--white {
+  color: #fff;
+  border-color: #fff; }
+  .btn--white:hover {
+    border-color: #E4B523;
+    color: #E4B523; }
+
+.gold-text {
+  color: #E4B523; }
+
+.nav-top {
+  text-align: center; }
+
+.nav-top__list {
+  width: 40%; }
+
+.nav-top__link {
+  font-size: .875rem;
+  padding: 5px; }
+
+.logo {
+  display: inline-block;
+  padding: 15px;
+  max-width: 122.5px;
+  width: 20%; }
+  .logo img {
+    width: 100%;
+    height: auto; }
+
+.header {
+  text-align: center;
+  padding-bottom: 2rem; }
+
+.promo {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 810px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 8.75rem;
+  padding-top: 8.75rem; }
+
+.promo__title {
+  font-size: 3.75rem;
+  font-weight: normal;
+  text-transform: uppercase; }
+
+.promo__subtitle {
+  font-size: 1.5rem;
+  position: relative; }
+  .promo__subtitle:after {
+    bottom: -80px;
+    content: 'V';
+    font-size: 3rem;
+    position: absolute;
+    left: 50%;
+    margin-left: -1rem; }
+
+.timer {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 640px;
+  padding-left: 0;
+  padding-right: 0;
+  background-color: rgba(255, 255, 255, 0.05);
+  height: 8.75rem;
+  position: relative; }
+
+.timer__text {
+  border: 4px solid #E4B523;
+  border-radius: 4px;
+  font-size: 2.375rem;
+  height: 100%;
+  line-height: 1.0;
+  padding: 10px 0;
+  position: absolute;
+  text-transform: uppercase;
+  width: 10.5rem; }
+
+.timer__text__big {
+  font-size: 4.56rem;
+  letter-spacing: .05em; }
+
+.timer__main {
+  font-size: 3.5rem;
+  line-height: 8.75rem;
+  padding-left: 10.5rem;
+  white-space: nowrap; }
+
+.steps {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1270px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 2rem;
+  padding-top: 15rem;
+  position: relative; }
+  .steps:before {
+    background-color: rgba(255, 255, 255, 0.2);
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 2rem;
+    margin-left: -2px;
+    height: 10rem;
+    width: 4px; }
+
+.step {
+  padding: 10px 15px;
+  position: relative;
+  vertical-align: top;
+  width: 33%; }
+  .step:before, .step:after {
+    background-color: rgba(255, 255, 255, 0.2);
+    content: '';
+    position: absolute;
+    top: 1rem;
+    height: 4px;
+    width: 20%; }
+  .step:before {
+    left: 5%; }
+  .step:after {
+    right: 5%; }
+  .step:first-child:before, .step:last-child:after {
+    width: 0; }
+
+.step__number {
+  background-color: #fff;
+  color: #0A0E21;
+  font-weight: bold;
+  display: inline-block; }
+
+.step__title {
+  color: #E4B523;
+  display: inline-block;
+  padding-left: 30px;
+  position: relative; }
+  .step__title:before {
+    content: 'V';
+    left: 0;
+    position: absolute; }
+
+.step__text {
+  line-height: 1.5; }
+
+.sign-up {
+  background-color: #fff;
+  padding: 2rem 0;
+  text-align: center; }
+
+.sign-up__title {
+  color: #E4B523;
+  text-transform: uppercase; }
+
+.input-wrap {
+  border: 2px solid #444;
+  padding: 10px;
+  width: 25%; }
+  .input-wrap label {
+    color: #000;
+    display: inline-block;
+    width: 30%;
+    margin-right: -7px; }
+  .input-wrap input {
+    border: none;
+    width: 70%;
+    display: inline-block; }
