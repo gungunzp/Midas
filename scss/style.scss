@@ -1,4 +1,3 @@
-
 $black: #000;
 $lightGray: #F9F9F9;
 // https://htmlacademy.ru/courses/53/run/4
@@ -10,27 +9,46 @@ $orange: #E67E22;
 $itemHeight: 12vh;
 $iconSize: 2.5rem;
 
-
 // midas colors
 
 $white: #fff;
-$dark-blue: #0A0E21;
 $gold: #E4B523;
-$gray: #444;
+$dark-blue: #0A0E21;
+$blue-gray: #212435;
+$dark-gray: #444;
+$middle-gray: #5f727f;
+$light-gray: #b6c6c9;
 
 // misc
 $tile-gutter: 15px;
 $container-width: 950px;
-$animationTime: .2s;
+$animation-time: .2s;
+
+// fonts
+
+@font-face {
+	font-family: ProximaNova;
+	src: url('../fonts/Proxima Nova Thin.ttf');
+}
+
+@font-face {
+	font-family: ProximaNovaBold;
+	src: url('../fonts/Proxima Nova Semibold.ttf');
+}
+
 
 // adjustments
 
 html {
 	font-size: 16px;
+
+	@media (max-width: 768px) {
+		font-size: 14px;
+	}
 }
 
 body {
-	font-family: 'Helvetica', sans-serif;
+	font-family: 'ProximaNova', 'Helvetica', sans-serif;
 	background-color: $dark-blue;
 	color: $white;
 }
@@ -50,12 +68,18 @@ a {
 	display: inline-block;
 	text-decoration: none;
 	text-transform: uppercase;
-	transition: $animationTime;
+	transition: $animation-time;
 
 	&:hover {
 		color: $gold;
 	}
 }
+
+h1, h2, h3, h4 {
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
 
 // helpers
 
@@ -95,8 +119,8 @@ a {
 	border-radius: 120px;
 	color: $gold;
 	font-size: 1rem;
-	font-weight: 600;
-	padding: .625rem 1.25rem;
+	font-family: 'ProximaNovaBold', 'Helvetica', sans-serif;
+	padding: .625rem 3rem;
 	text-transform: none;
 
 	&:hover {
@@ -119,20 +143,33 @@ a {
 	color: $gold;
 }
 
+.big-text {
+	display: block;
+	font-size: 137%;
+}
+
 %ellipsis {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
 
+
 // navigation
 
 .nav-top {
 	text-align: center;
+	height: 0;
 }
 
 .nav-top__list {
 	width: 40%;
+
+	&:last-child > *:last-child {
+		margin-right: -15%;
+		position: relative;
+		right: -5%;
+	}
 }
 
 .nav-top__link {
@@ -152,11 +189,14 @@ a {
 	}
 }
 
+
 // header
 
 .header {
 	text-align: center;
 	padding-bottom: 2rem;
+	padding-top: 4rem;
+	background: url(../img/header_bg.jpg) no-repeat center/cover;
 }
 
 .promo {
@@ -167,12 +207,13 @@ a {
 
 .promo__title {
 	font-size: 3.75rem;
-	font-weight: normal;
-	text-transform: uppercase;
 }
 
 .promo__subtitle {
 	font-size: 1.5rem;
+}
+
+.promo__down-btn {
 	position: relative;
 
 	&:after {
@@ -196,17 +237,18 @@ a {
 	border: 4px solid $gold;
 	border-radius: 4px;
 	font-size: 2.375rem;
-	height: 100%;
-	line-height: 1.0;
-	padding: 10px 0;
+	font-family: 'ProximaNovaBold', 'Helvetica', sans-serif;
+	height: 8.75rem;
+	line-height: 1;
+	padding: .625rem 0;
 	position: absolute;
 	text-transform: uppercase;
 	width: 10.5rem;
 }
 
 .timer__text__big {
-	font-size: 4.56rem;
-	letter-spacing: .05em;
+	font-size: 1.94em;
+	letter-spacing: .02em;
 }
 
 .timer__main {
@@ -230,7 +272,7 @@ a {
 		top: 2rem;
 		margin-left: -2px;
 		height: 10rem;
-		width: 4px;
+		width: 2px;
 	}
 }
 
@@ -246,7 +288,7 @@ a {
 		content: '';
 		position: absolute;
 		top: 1rem;
-		height: 4px;
+		height: 2px;
 		width: 20%;
 	}
 
@@ -267,7 +309,7 @@ a {
 .step__number {
 	background-color: $white;
 	color: $dark-blue;
-	font-weight: bold;
+	font-family: 'ProximaNovaBold', 'Helvetica', sans-serif;
 	display: inline-block;
 }
 
@@ -276,6 +318,7 @@ a {
 	display: inline-block;
 	padding-left: 30px;
 	position: relative;
+	text-transform: none;
 
 	&:before {
 		content: 'V';
@@ -299,24 +342,319 @@ a {
 
 .sign-up__title {
 	color: $gold;
-	text-transform: uppercase;
+	font-family: 'ProximaNovaBold', 'Helvetica', sans-serif;
+	font-size: 3.4375rem;
 }
 
 .input-wrap {
-	border: 2px solid $gray;
+	border-color: $dark-gray;
+	border-style: solid;
+	border-bottom-width: 2px;
+	border-top-width: 2px;
+	border-right-width: 0;
+	border-left-width: 1px;
 	padding: 10px;
 	width: 25%;
+	height: 50px;
+	font-size: 1.33rem;
+	vertical-align: top;
 	
 	label {
-		color: #000;
+		color: $dark-gray;
 		display: inline-block;
 		width: 30%;
-		margin-right: -7px;
+		margin-right: -6px;
 	}
 
-	input {
-		border: none;
-		width: 70%;
-		display: inline-block;
+	&:first-child {
+		border-radius: 30px 0 0 30px;
+		border-left-width: 2px;
 	}
+}
+
+.input-text {
+	border: none;
+	width: 70%;
+	display: inline-block;
+	padding-left: 6px;
+	color: $gold;
+	outline: none;
+}
+
+.input-submit {
+	color: $white;
+	font-family: 'ProximaNovaBold', 'Helvetica', sans-serif;
+	background-color: $dark-gray;
+	border: 2px solid $dark-gray;
+	border-radius: 0 30px 30px 0;
+	text-transform: uppercase;
+	outline: none;
+	cursor: pointer;
+	transition: $animation-time;
+
+	&:hover {
+		background-color: $gold;
+		border-color: $gold;
+	}
+}
+
+
+// token roadmap
+
+.token {
+	text-align: center;
+}
+
+.token__title {
+	font-size: 5rem;
+}
+
+.token__subtitle {
+	font-size: 1.5rem;
+}
+
+.gold-bar {
+	width: 30%;
+}
+
+.dates-left {
+	padding-right: 50px;
+	text-align: right;
+	width: 35%;
+	vertical-align: top;
+}
+
+.dates-right {
+	padding-left: 50px;
+	text-align: left;
+	width: 35%;
+	vertical-align: top;
+}
+
+.date {
+	min-height: 20%;
+	position: relative;
+
+	&:before {
+		position: absolute;
+		content: '';
+		width: 40px;
+		height: 40px;
+		top: 20px;
+		border-radius: 50%;
+		background-color: $light-gray;
+	}
+
+	&:after {
+		position: absolute;
+		content: '';
+		width: 3px;
+		height: 100%;
+		background-color: $light-gray;
+		//left: -40px;
+		top: 20%;
+	}
+
+	&:last-child:after {
+		bottom: 80%;
+		top: auto;
+	}
+}
+
+.date__title {
+	color: $gold;
+	font-size: 1.5rem;
+	padding: 10px $tile-gutter;
+}
+
+.date__text {
+	font-size: 1rem;
+	line-height: 1.6;
+	padding: 10px $tile-gutter;
+}
+
+// chart
+
+.numbers {
+	background-color: $white;
+	padding-bottom: 2rem;
+	padding-top: 2rem;
+}
+
+.donut-chart {
+	width: 50%;
+	color: $dark-blue;
+}
+
+.numbers-text {
+	width: 50%;
+}
+
+.numbers__title  {
+	font-size: 2.25rem;
+	color: $dark-blue;
+}
+
+.numbers__desc {
+	color: $middle-gray;
+}
+
+.chart-legend {
+	color: $middle-gray;
+}
+
+.chart-legend__item {
+	display: block;
+	margin: .5rem 0 .5rem 20px;
+	position: relative;
+
+	&:before {
+		content: '';
+		width: 16px;
+		height: 16px;
+		position: absolute;
+		background-color: $middle-gray;
+		left: -20px;
+		top: 0;
+	}
+}
+
+
+// about
+
+.about {
+	padding-bottom: 5rem;
+	padding-top: 3rem;
+}
+
+.about__title {
+	font-size: 2.75rem;
+	position: relative;
+
+	&:before {
+		content: '';
+		position: absolute;
+		left: -90px;
+		top: 1.5rem;
+		width: 80px;
+		height: 2px;
+		background-color: $light-gray;
+	}
+}
+
+.about__text {
+	font-size: 1rem;
+	line-height: 1.5;
+	columns: 320px 2;
+	column-gap: 60px;
+	padding: 10px 0;
+	transform: translateZ(0);
+}
+
+.about__item {
+	font-size: 3.125rem;
+	padding-top: 7rem;
+	text-align: center;
+	width: 25%;
+
+	small {
+		font-size: 1.5rem;
+		display: block;
+	}
+}
+
+.people {
+	padding-top: 10rem;
+}
+
+.people__title {
+	font-size: 3.125rem;
+}
+
+.person {
+	text-align: center;
+	width: 30%;
+	margin: 0 1.5%;
+	background-color: $blue-gray;
+}
+
+.person__name {
+	font-size: 1.5rem;
+}
+
+.person__position {
+	font-size: 1rem;
+}
+
+.person__tel {
+	font-size: 1.1875rem;
+}
+
+.person__mail {
+	font-size: 1rem;
+	padding-left: 30px;
+}
+
+// footer
+
+.footer {
+	background-color: $blue-gray;
+	padding-bottom: 1rem;
+	padding-top: 3rem;
+}
+
+.organizations-slider {
+	@include container(1200px);
+	padding-bottom: 5rem;
+	padding-top: 5rem;
+	margin-bottom: 2rem;
+	position: relative;
+	text-align: center;
+
+	&:after {
+		position: absolute;
+		content: '';
+		height: 3px;
+		bottom: 0;
+		left: 5%;
+		right: 5%;
+		background-image: linear-gradient(90deg, $dark-blue 90%, transparent 90%, transparent 100%);
+		background-size: 10.2% 100%;
+	}
+}
+
+.organization {
+	width: 25%;
+}
+
+.text-logo {
+	vertical-align: top;
+	width: 25%;
+}
+
+.nav-bottom {
+	width: 50%;
+	vertical-align: top;
+	columns: 100px 2;
+	column-gap: 60px;
+	transform: translateZ(0);
+	padding-bottom: 2rem;
+
+	> * {
+		@extend %ellipsis;
+		display: block;
+	}
+}
+
+.nav-bottom__link {
+	font-size: .875rem;
+	padding: 5px 10px;
+}
+
+.copyright {
+	text-align: center;
+	padding: 2rem $tile-gutter;
+	font-size: .75rem;
+	text-transform: uppercase;
+	color: rgba($white, .2);
 }

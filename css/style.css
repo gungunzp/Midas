@@ -1,8 +1,19 @@
+@font-face {
+  font-family: ProximaNova;
+  src: url("../fonts/Proxima Nova Thin.ttf"); }
+
+@font-face {
+  font-family: ProximaNovaBold;
+  src: url("../fonts/Proxima Nova Semibold.ttf"); }
+
 html {
   font-size: 16px; }
+  @media (max-width: 768px) {
+    html {
+      font-size: 14px; } }
 
 body {
-  font-family: 'Helvetica', sans-serif;
+  font-family: 'ProximaNova', 'Helvetica', sans-serif;
   background-color: #0A0E21;
   color: #fff; }
 
@@ -23,6 +34,10 @@ a {
   a:hover {
     color: #E4B523; }
 
+h1, h2, h3, h4 {
+  font-weight: normal;
+  text-transform: uppercase; }
+
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -41,8 +56,8 @@ a {
   border-radius: 120px;
   color: #E4B523;
   font-size: 1rem;
-  font-weight: 600;
-  padding: .625rem 1.25rem;
+  font-family: 'ProximaNovaBold', 'Helvetica', sans-serif;
+  padding: .625rem 3rem;
   text-transform: none; }
   .btn:hover {
     border-color: #fff;
@@ -58,11 +73,25 @@ a {
 .gold-text {
   color: #E4B523; }
 
+.big-text {
+  display: block;
+  font-size: 137%; }
+
+.nav-bottom > * {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
 .nav-top {
-  text-align: center; }
+  text-align: center;
+  height: 0; }
 
 .nav-top__list {
   width: 40%; }
+  .nav-top__list:last-child > *:last-child {
+    margin-right: -15%;
+    position: relative;
+    right: -5%; }
 
 .nav-top__link {
   font-size: .875rem;
@@ -79,7 +108,9 @@ a {
 
 .header {
   text-align: center;
-  padding-bottom: 2rem; }
+  padding-bottom: 2rem;
+  padding-top: 4rem;
+  background: url(../img/header_bg.jpg) no-repeat center/cover; }
 
 .promo {
   margin-left: auto;
@@ -91,14 +122,14 @@ a {
   padding-top: 8.75rem; }
 
 .promo__title {
-  font-size: 3.75rem;
-  font-weight: normal;
-  text-transform: uppercase; }
+  font-size: 3.75rem; }
 
 .promo__subtitle {
-  font-size: 1.5rem;
+  font-size: 1.5rem; }
+
+.promo__down-btn {
   position: relative; }
-  .promo__subtitle:after {
+  .promo__down-btn:after {
     bottom: -80px;
     content: 'V';
     font-size: 3rem;
@@ -120,16 +151,17 @@ a {
   border: 4px solid #E4B523;
   border-radius: 4px;
   font-size: 2.375rem;
-  height: 100%;
-  line-height: 1.0;
-  padding: 10px 0;
+  font-family: 'ProximaNovaBold', 'Helvetica', sans-serif;
+  height: 8.75rem;
+  line-height: 1;
+  padding: .625rem 0;
   position: absolute;
   text-transform: uppercase;
   width: 10.5rem; }
 
 .timer__text__big {
-  font-size: 4.56rem;
-  letter-spacing: .05em; }
+  font-size: 1.94em;
+  letter-spacing: .02em; }
 
 .timer__main {
   font-size: 3.5rem;
@@ -154,7 +186,7 @@ a {
     top: 2rem;
     margin-left: -2px;
     height: 10rem;
-    width: 4px; }
+    width: 2px; }
 
 .step {
   padding: 10px 15px;
@@ -166,7 +198,7 @@ a {
     content: '';
     position: absolute;
     top: 1rem;
-    height: 4px;
+    height: 2px;
     width: 20%; }
   .step:before {
     left: 5%; }
@@ -178,14 +210,15 @@ a {
 .step__number {
   background-color: #fff;
   color: #0A0E21;
-  font-weight: bold;
+  font-family: 'ProximaNovaBold', 'Helvetica', sans-serif;
   display: inline-block; }
 
 .step__title {
   color: #E4B523;
   display: inline-block;
   padding-left: 30px;
-  position: relative; }
+  position: relative;
+  text-transform: none; }
   .step__title:before {
     content: 'V';
     left: 0;
@@ -201,18 +234,251 @@ a {
 
 .sign-up__title {
   color: #E4B523;
-  text-transform: uppercase; }
+  font-family: 'ProximaNovaBold', 'Helvetica', sans-serif;
+  font-size: 3.4375rem; }
 
 .input-wrap {
-  border: 2px solid #444;
+  border-color: #444;
+  border-style: solid;
+  border-bottom-width: 2px;
+  border-top-width: 2px;
+  border-right-width: 0;
+  border-left-width: 1px;
   padding: 10px;
-  width: 25%; }
+  width: 25%;
+  height: 50px;
+  font-size: 1.33rem;
+  vertical-align: top; }
   .input-wrap label {
-    color: #000;
+    color: #444;
     display: inline-block;
     width: 30%;
-    margin-right: -7px; }
-  .input-wrap input {
-    border: none;
-    width: 70%;
-    display: inline-block; }
+    margin-right: -6px; }
+  .input-wrap:first-child {
+    border-radius: 30px 0 0 30px;
+    border-left-width: 2px; }
+
+.input-text {
+  border: none;
+  width: 70%;
+  display: inline-block;
+  padding-left: 6px;
+  color: #E4B523;
+  outline: none; }
+
+.input-submit {
+  color: #fff;
+  font-family: 'ProximaNovaBold', 'Helvetica', sans-serif;
+  background-color: #444;
+  border: 2px solid #444;
+  border-radius: 0 30px 30px 0;
+  text-transform: uppercase;
+  outline: none;
+  cursor: pointer;
+  transition: 0.2s; }
+  .input-submit:hover {
+    background-color: #E4B523;
+    border-color: #E4B523; }
+
+.token {
+  text-align: center; }
+
+.token__title {
+  font-size: 5rem; }
+
+.token__subtitle {
+  font-size: 1.5rem; }
+
+.gold-bar {
+  width: 30%; }
+
+.dates-left {
+  padding-right: 50px;
+  text-align: right;
+  width: 35%;
+  vertical-align: top; }
+
+.dates-right {
+  padding-left: 50px;
+  text-align: left;
+  width: 35%;
+  vertical-align: top; }
+
+.date {
+  min-height: 20%;
+  position: relative; }
+  .date:before {
+    position: absolute;
+    content: '';
+    width: 40px;
+    height: 40px;
+    top: 20px;
+    border-radius: 50%;
+    background-color: #b6c6c9; }
+  .date:after {
+    position: absolute;
+    content: '';
+    width: 3px;
+    height: 100%;
+    background-color: #b6c6c9;
+    top: 20%; }
+  .date:last-child:after {
+    bottom: 80%;
+    top: auto; }
+
+.date__title {
+  color: #E4B523;
+  font-size: 1.5rem;
+  padding: 10px 15px; }
+
+.date__text {
+  font-size: 1rem;
+  line-height: 1.6;
+  padding: 10px 15px; }
+
+.numbers {
+  background-color: #fff;
+  padding-bottom: 2rem;
+  padding-top: 2rem; }
+
+.donut-chart {
+  width: 50%;
+  color: #0A0E21; }
+
+.numbers-text {
+  width: 50%; }
+
+.numbers__title {
+  font-size: 2.25rem;
+  color: #0A0E21; }
+
+.numbers__desc {
+  color: #5f727f; }
+
+.chart-legend {
+  color: #5f727f; }
+
+.chart-legend__item {
+  display: block;
+  margin: .5rem 0 .5rem 20px;
+  position: relative; }
+  .chart-legend__item:before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    background-color: #5f727f;
+    left: -20px;
+    top: 0; }
+
+.about {
+  padding-bottom: 5rem;
+  padding-top: 3rem; }
+
+.about__title {
+  font-size: 2.75rem;
+  position: relative; }
+  .about__title:before {
+    content: '';
+    position: absolute;
+    left: -90px;
+    top: 1.5rem;
+    width: 80px;
+    height: 2px;
+    background-color: #b6c6c9; }
+
+.about__text {
+  font-size: 1rem;
+  line-height: 1.5;
+  columns: 320px 2;
+  column-gap: 60px;
+  padding: 10px 0;
+  transform: translateZ(0); }
+
+.about__item {
+  font-size: 3.125rem;
+  padding-top: 7rem;
+  text-align: center;
+  width: 25%; }
+  .about__item small {
+    font-size: 1.5rem;
+    display: block; }
+
+.people {
+  padding-top: 10rem; }
+
+.people__title {
+  font-size: 3.125rem; }
+
+.person {
+  text-align: center;
+  width: 30%;
+  margin: 0 1.5%;
+  background-color: #212435; }
+
+.person__name {
+  font-size: 1.5rem; }
+
+.person__position {
+  font-size: 1rem; }
+
+.person__tel {
+  font-size: 1.1875rem; }
+
+.person__mail {
+  font-size: 1rem;
+  padding-left: 30px; }
+
+.footer {
+  background-color: #212435;
+  padding-bottom: 1rem;
+  padding-top: 3rem; }
+
+.organizations-slider {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 5rem;
+  padding-top: 5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  text-align: center; }
+  .organizations-slider:after {
+    position: absolute;
+    content: '';
+    height: 3px;
+    bottom: 0;
+    left: 5%;
+    right: 5%;
+    background-image: linear-gradient(90deg, #0A0E21 90%, transparent 90%, transparent 100%);
+    background-size: 10.2% 100%; }
+
+.organization {
+  width: 25%; }
+
+.text-logo {
+  vertical-align: top;
+  width: 25%; }
+
+.nav-bottom {
+  width: 50%;
+  vertical-align: top;
+  columns: 100px 2;
+  column-gap: 60px;
+  transform: translateZ(0);
+  padding-bottom: 2rem; }
+  .nav-bottom > * {
+    display: block; }
+
+.nav-bottom__link {
+  font-size: .875rem;
+  padding: 5px 10px; }
+
+.copyright {
+  text-align: center;
+  padding: 2rem 15px;
+  font-size: .75rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.2); }
