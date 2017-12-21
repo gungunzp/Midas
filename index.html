@@ -67,26 +67,24 @@
         </header>
 
         <section class="sign-up">
-            <div class="container">
-                <h2 class="sign-up__title">Sign up today.</h2>
-                <form action="#">
-                    <div class="container--inline">
-                        <div class="input-wrap">
-                            <label for="name">Name:</label>
-                            <input class="input-text" type="text" name="name" id="name" value="John Doe">
-                        </div>
-                        <div class="input-wrap">
-                            <label for="email">Email:</label>
-                            <input class="input-text" type="email" name="email" id="email" value="info@johndoe.com">
-                        </div>
-                        <div class="input-wrap">
-                            <label for="amount">Amount</label>
-                            <input class="input-text" type="text" name="amount" id="amount" value="$0.00">
-                        </div>
-                        <input class="input-wrap input-submit" type="button" value="Submit">
+            <h2 class="sign-up__title">Sign up today.</h2>
+            <form action="#">
+                <div class="form-container container--inline">
+                    <div class="input-wrap">
+                        <label for="name">Name:</label>
+                        <input class="input-text" type="text" name="name" id="name" value="John Doe">
                     </div>
-                </form>
-            </div>
+                    <div class="input-wrap">
+                        <label for="email">Email:</label>
+                        <input class="input-text" type="email" name="email" id="email" value="info@johndoe.com">
+                    </div>
+                    <div class="input-wrap">
+                        <label for="amount">Amount</label>
+                        <input class="input-text" type="text" name="amount" id="amount" value="$0.00">
+                    </div>
+                    <input class="input-wrap input-submit" type="button" value="Submit">
+                </div>
+            </form>
         </section>
 
         <section class="token">
@@ -108,7 +106,7 @@
                             <p class="date__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi illum minus quisquam sint vel. Aliquid beatae blanditiis est illo ipsum molestiae nisi repellendus! A, voluptate!</p>
                         </li>
                     </ul>
-                    <img src="" alt="Gold bar" class="gold-bar">
+                    <img src="img/gold_bar.png" alt="Gold bar" class="gold-bar">
                     <ul class="dates-right">
                         <li class="date">
                             <h3 class="date__title">May 2018</h3>
@@ -130,7 +128,8 @@
         <section class="numbers">
             <div class="container container--inline">
                 <div class="donut-chart">
-                    <img src="" alt="Graph chart">
+                    <img src="img/donut_chart.png" alt="Graph chart">
+                    <div class="donut-chart__text">Graph title goes here <span class="big-text">90%</span></div>
                 </div>
                 <div class="numbers-text">
                     <h2 class="numbers__title">Some numericals <span class="big-text">relevant to Midas</span></h2>
@@ -151,52 +150,52 @@
                 <h2 class="about__title">history of <span class="big-text gold-text">The Artisinal Gold Council.</span></h2>
                 <p class="about__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate deserunt, dolores earum ex exercitationem fuga illo ipsa officia quis repudiandae? Consequatur cupiditate et fuga fugit inventore laboriosam quas quibusdam quisquam, ratione sit suscipit, tenetur, totam voluptatem. Amet autem consectetur doloremque dolorum necessitatibus quae sed! Cumque dolores dolorum non quae quam. Ad animi aspernatur assumenda, doloremque dolores ducimus inventore ipsum laudantium libero minima mollitia nam possimus quae, quasi quis quos, recusandae reprehenderit sit ullam vero! A architecto blanditiis cum cumque deserunt doloribus enim eveniet excepturi expedita illo ipsam iste, labore maxime minus mollitia nemo nihil odio perspiciatis quae qui quibusdam quo repudiandae rerum sequi sit soluta tenetur? Animi asperiores debitis distinctio dolorem laboriosam laborum laudantium maxime, nam neque, nisi officia quis quisquam, repellat repellendus tenetur totam voluptatibus? Culpa debitis deleniti error facere illo labore laboriosam, quam qui rerum velit. Ab, aliquid amet animi eaque error exercitationem id illum itaque magnam modi mollitia nemo, neque odit pariatur, porro repudiandae voluptatibus! Amet, at aut eaque ex harum iusto nam nobis perferendis. Ad eius error molestiae mollitia nostrum omnis reprehenderit repudiandae, voluptatum. Autem commodi labore nemo nostrum velit! Architecto at autem commodi consequuntur dolore earum eligendi expedita facere labore laboriosam laborum nisi sint, ut!</p>
                 <ul class="container--inline">
-                    <li class="about__item">15M<small>Invested</small></li>
-                    <li class="about__item">22<small>Members</small></li>
-                    <li class="about__item">89.5K<small>Backers</small></li>
-                    <li class="about__item">15M<small>Countries</small></li>
+                    <li class=" about__item about__item--invested">15M<small>Invested</small></li>
+                    <li class="about__item about__item--members">22<small>Members</small></li>
+                    <li class="about__item about__item--backers">89.5K<small>Backers</small></li>
+                    <li class="about__item about__item--countries">15M<small>Countries</small></li>
                 </ul>
             </div>
             <div class="people container">
                 <h2 class="people__title">Who’s behind the <span class="gold-text">Midas Token?</span></h2>
                 <ul class="people-slider container--inline">
                     <li class="person">
-                        <img src="" alt="Johnny Doe">
+                        <img src="img/director.png" alt="Johnny Doe">
                         <h3 class="person__name">Johnny Doe</h3>
                         <div class="person__position">Director</div>
                         <div class="person__tel">+1 (347) 1625362</div>
                         <div class="person__mail">rinfo@midastoken.io</div>
-                        <div class="person__links">
-                            <a href="#"></a>
-                            <a href="#"></a>
-                            <a href="#"></a>
-                            <a href="#"></a>
+                        <div class="person__links container--flex">
+                            <a href="#" class="facebook"></a>
+                            <a href="#" class="twitter"></a>
+                            <a href="#" class="linkedin"></a>
+                            <a href="#" class="instagram"></a>
                         </div>
                     </li>
                     <li class="person">
-                        <img src="" alt="Alexia Doe">
+                        <img src="img/operations.png" alt="Alexia Doe">
                         <h3 class="person__name">Alexia Doe</h3>
                         <div class="person__position">Operations</div>
                         <div class="person__tel">+1 (347) 1625362</div>
                         <div class="person__mail">rinfo@midastoken.io</div>
-                        <div class="person__links">
-                            <a href="#"></a>
-                            <a href="#"></a>
-                            <a href="#"></a>
-                            <a href="#"></a>
+                        <div class="person__links container--flex">
+                            <a href="#" class="facebook"></a>
+                            <a href="#" class="twitter"></a>
+                            <a href="#" class="linkedin"></a>
+                            <a href="#" class="instagram"></a>
                         </div>
                     </li>
                     <li class="person">
-                        <img src="" alt="Richard Doe">
+                        <img src="img/investor.png" alt="Richard Doe">
                         <h3 class="person__name">Richard Doe</h3>
                         <div class="person__position">Crypto Invester</div>
                         <div class="person__tel">+1 (347) 1625362</div>
                         <div class="person__mail">rinfo@midastoken.io</div>
-                        <div class="person__links">
-                            <a href="#"></a>
-                            <a href="#"></a>
-                            <a href="#"></a>
-                            <a href="#"></a>
+                        <div class="person__links container--flex">
+                            <a href="#" class="facebook"></a>
+                            <a href="#" class="twitter"></a>
+                            <a href="#" class="linkedin"></a>
+                            <a href="#" class="instagram"></a>
                         </div>
                     </li>
                 </ul>
@@ -205,13 +204,15 @@
 
         <footer class="footer">
             <ul class="organizations-slider container--inline">
-                <li class="organization"><img src="" alt="United Nations"></li>
-                <li class="organization"><img src="" alt="The NY Times"></li>
-                <li class="organization"><img src="" alt="Barrick"></li>
-                <li class="organization"><img src="" alt="Canada"></li>
+                <li class="organization"><img src="img/un.png" alt="United Nations"></li>
+                <li class="organization"><img src="img/ny_times.png" alt="The NY Times"></li>
+                <li class="organization"><img src="img/barrick.png" alt="Barrick"></li>
+                <li class="organization"><img src="img/canada.png" alt="Canada"></li>
             </ul>
-            <div class="container container--inline">
-                <img src="" alt="Midas" class="text-logo">
+            <div class="footer-middle container container--inline">
+                <div class="text-logo">
+                    <img src="img/logo_text.png" alt="Midas">
+                </div>
                 <ul class="nav-bottom">
                     <li><a href="#" class="nav-bottom__link">Tokens</a></li>
                     <li><a href="#" class="nav-bottom__link">Agreements </a></li>
