@@ -18,13 +18,27 @@ $laptop-small: 992px;
 $laptop: 1200px;
 
 // fonts
-@font-face {
-  font-family: ProximaNova;
-  src: url('../fonts/Proxima Nova Thin.ttf');
-}
-@font-face {
-  font-family: ProximaNovaBold;
-  src: url('../fonts/Proxima Nova Semibold.ttf');
+$font-dir: '../fonts/' !default;
+
+// first value ('Bold') is name of font-family, second value ('droidserif-bold') is the name of file
+$fonts: (
+  ('ProximaNova', 'Proxima Nova Thin'),
+  ('ProximaNovaBold', 'Proxima Nova Semibold')
+) !default;
+
+@each $font in $fonts {
+  @font-face {
+    $fontpath: '#{$font-dir}#{nth($font, 2)}';
+    font-family: '#{nth($font, 1)}';
+    font-style: normal;
+    font-weight: normal;
+    src: url('#{$fontpath}.otf');
+    src: url('#{$fontpath}.eot?#iefix') format('embedded-opentype'),
+    url('#{$fontpath}.woff2') format('woff2'),
+    url('#{$fontpath}.woff') format('woff'),
+    url('#{$fontpath}.ttf') format('truetype'),
+    url('#{$fontpath}.svg?##{nth($font, 2)}') format('svg');
+  }
 }
 
 // adjustments
