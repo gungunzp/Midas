@@ -11,10 +11,11 @@ html {
   margin: 0;
   padding: 0;
   font-size: 16px;
+  overflow-x: hidden;
   position: relative; }
   @media (max-width: 768px) {
     html {
-      font-size: 14px; } }
+      font-size: 13px; } }
   html:before {
     content: '';
     position: absolute;
@@ -94,6 +95,12 @@ p {
   .btn--top:hover {
     border-color: #E4B523;
     color: #E4B523; }
+  @media (max-width: 1200px) {
+    .btn--top {
+      font-size: .8rem;
+      padding-left: .8rem;
+      padding-right: .8rem;
+      margin-left: 3%; } }
 
 .gold-text {
   color: #E4B523; }
@@ -114,39 +121,66 @@ p {
   margin-left: auto;
   margin-right: auto;
   max-width: 82rem;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 0;
+  padding-right: 0;
   text-align: center;
   height: 0; }
 
 .nav-top__list {
-  width: 43%; }
+  width: 45%; }
+  @media (max-width: 600px) {
+    .nav-top__list {
+      text-align: right;
+      width: 39%;
+      vertical-align: top;
+      padding-top: 1rem; } }
   .nav-top__list:first-child {
     padding-left: 3%; }
+    @media (max-width: 1200px) {
+      .nav-top__list:first-child {
+        padding-left: .5%; } }
+    @media (max-width: 600px) {
+      .nav-top__list:first-child {
+        text-align: left; } }
   .nav-top__list li {
     padding: 0 2.5%; }
+    @media (max-width: 1200px) {
+      .nav-top__list li {
+        padding: 0 .5%; } }
+    @media (max-width: 600px) {
+      .nav-top__list li {
+        display: block; } }
 
 .nav-top__link {
   font-size: .875rem;
   padding: 1rem 10%;
   white-space: nowrap; }
+  @media (max-width: 600px) {
+    .nav-top__link {
+      padding: 1rem 0; } }
 
 .nav-top__logo {
   display: inline-block;
-  padding: 3.8rem 15px;
-  width: 14%; }
+  padding: 3.8rem 0;
+  width: 10%; }
+  @media (max-width: 600px) {
+    .nav-top__logo {
+      width: 16%;
+      vertical-align: top;
+      padding-top: 2rem; } }
   .nav-top__logo img {
     width: 100%;
-    max-width: 8rem;
-    height: auto; }
+    max-width: 8rem; }
 
 .header {
   text-align: center;
   padding-bottom: 6rem;
   padding-top: 4rem;
   background: url(../img/header_bg.jpg) no-repeat center 0;
-  -webkit-background-size: 100% auto;
   background-size: 100% auto; }
+  @media (max-width: 600px) {
+    .header {
+      background-size: auto 60%; } }
 
 .promo {
   margin-left: auto;
@@ -161,6 +195,9 @@ p {
   font-size: 3.75rem;
   letter-spacing: .05em;
   padding-bottom: 1rem; }
+  @media (max-width: 600px) {
+    .promo__title {
+      font-size: 2.5rem; } }
 
 .promo__subtitle {
   font-size: 1.5rem;
@@ -179,36 +216,40 @@ p {
     background: url(../img/angle_down_white.png) no-repeat center/contain; }
 
 .timer {
+  font-size: 2.2rem;
   margin-left: auto;
   margin-right: auto;
-  max-width: 40rem;
+  max-width: 18em;
   padding-left: 0;
   padding-right: 0;
   background-color: rgba(255, 255, 255, 0.05);
-  height: 8.75rem;
+  height: 4em;
   position: relative; }
+  @media (max-width: 600px) {
+    .timer {
+      font-size: 1.2em; } }
 
-.timer__text {
-  border: 0.25rem solid #E4B523;
-  border-radius: .25rem;
-  font-size: 2.375rem;
+.timer__label {
+  border: 0.1em solid #E4B523;
+  border-radius: .1em;
+  font-size: 1em;
   font-family: 'ProximaNovaBold', 'Helvetica', sans-serif;
-  height: 8.75rem;
+  height: 4em;
   line-height: 1;
-  padding: .625rem 0;
+  padding: .3em 0;
   position: absolute;
   text-transform: uppercase;
-  width: 10.5rem; }
+  width: 4.9em; }
 
-.timer__text__big {
+.timer__label__big {
   font-size: 1.94em;
   letter-spacing: .02em; }
 
 .timer__main {
-  font-size: 3.8rem;
-  line-height: 8.75rem;
-  letter-spacing: .05em;
-  padding-left: 10.5rem;
+  font-size: 1.8em;
+  line-height: 2.2em;
+  letter-spacing: .02em;
+  padding-left: 2.7em;
   word-spacing: -0.1em;
   white-space: nowrap; }
 
@@ -218,7 +259,7 @@ p {
   max-width: 110rem;
   padding-left: 0;
   padding-right: 0;
-  padding-top: 18.5rem;
+  padding-top: 15.5%;
   position: relative; }
   .steps:before {
     background-color: rgba(255, 255, 255, 0.2);
@@ -227,14 +268,21 @@ p {
     left: 50%;
     top: 4rem;
     margin-left: -2px;
-    height: 11rem;
+    height: 26%;
     width: 2px; }
+    @media (max-width: 1200px) {
+      .steps:before {
+        display: none; } }
 
 .step {
   padding: 1rem 0 1.5rem;
   position: relative;
   vertical-align: top;
   width: 33%; }
+  @media (max-width: 600px) {
+    .step {
+      display: block;
+      width: 100%; } }
   .step:before, .step:after {
     background-color: rgba(255, 255, 255, 0.2);
     content: '';
@@ -247,7 +295,10 @@ p {
   .step:after {
     right: 5%; }
   .step:first-child:before, .step:last-child:after {
-    width: 0; }
+    display: none; }
+    @media (max-width: 600px) {
+      .step:first-child:before, .step:last-child:after {
+        display: block; } }
 
 .step__number {
   background: url(../img/hexagon_white.png) no-repeat center/contain;
@@ -269,7 +320,7 @@ p {
   text-transform: none; }
   .step__title:before {
     content: '';
-    left: -3.5rem;
+    left: -34%;
     top: -.5rem;
     position: absolute;
     width: 2.25rem;
@@ -318,7 +369,8 @@ p {
   font-size: 1.33rem;
   white-space: nowrap;
   vertical-align: top;
-  text-align: left; }
+  text-align: left;
+  overflow: hidden; }
   .input-wrap label {
     color: #444;
     display: inline-block;
@@ -335,10 +387,25 @@ p {
     border-radius: 2rem 0 0 2rem;
     border-left-width: 2px;
     width: 24%; }
+    @media (max-width: 600px) {
+      .input-wrap:nth-child(1) {
+        display: block;
+        width: 100%;
+        border: none; } }
   .input-wrap:nth-child(2) {
     width: 33%; }
+    @media (max-width: 600px) {
+      .input-wrap:nth-child(2) {
+        display: block;
+        width: 100%;
+        border: none; } }
   .input-wrap:nth-child(3) {
     width: 23%; }
+    @media (max-width: 600px) {
+      .input-wrap:nth-child(3) {
+        display: block;
+        width: 100%;
+        border: none; } }
   .input-wrap.input-submit {
     color: #fff;
     font-family: 'ProximaNovaBold', 'Helvetica', sans-serif;
@@ -353,6 +420,11 @@ p {
     width: 19%;
     text-align: center;
     padding-top: .8rem; }
+    @media (max-width: 600px) {
+      .input-wrap.input-submit {
+        display: block;
+        width: 100%;
+        border-radius: 2rem; } }
     .input-wrap.input-submit:hover {
       background-color: #E4B523;
       border-color: #E4B523; }
@@ -371,6 +443,9 @@ p {
 .token__title {
   font-size: 5rem;
   letter-spacing: .05em; }
+  @media (max-width: 600px) {
+    .token__title {
+      font-size: 4rem; } }
 
 .token__subtitle {
   font-size: 1.5rem;
@@ -383,22 +458,37 @@ p {
   .gold-bar img {
     width: 100%;
     max-width: 16rem; }
+  @media (max-width: 600px) {
+    .gold-bar {
+      display: none; } }
 
 .dates-left {
   padding-right: 9%;
   text-align: right;
   width: 32%;
   vertical-align: top; }
+  @media (max-width: 600px) {
+    .dates-left {
+      display: block;
+      width: 88%; } }
 
 .dates-right {
   padding-left: 9%;
   text-align: left;
   width: 32%;
   vertical-align: top; }
+  @media (max-width: 600px) {
+    .dates-right {
+      display: block;
+      width: 88%;
+      margin-left: 12%; } }
 
 .date {
   padding-bottom: 29%;
   position: relative; }
+  @media (max-width: 600px) {
+    .date {
+      padding-bottom: 2rem; } }
   .date:before {
     position: absolute;
     content: '';
@@ -436,8 +526,8 @@ p {
 
 .chart {
   background-color: #fff;
-  padding-bottom: 11.5rem;
-  padding-top: 12.5rem; }
+  padding-bottom: 10%;
+  padding-top: 10.5%; }
 
 .chart-container {
   margin-left: auto;
@@ -447,12 +537,17 @@ p {
   padding-right: 0; }
 
 .donut-chart {
+  float: right;
   vertical-align: top;
   width: 50%;
   position: relative;
-  padding: 5.5rem 9%; }
+  padding: 7.5% 9%; }
   .donut-chart img {
     width: 100%; }
+  @media (max-width: 600px) {
+    .donut-chart {
+      display: block;
+      width: 100%; } }
 
 .donut-chart__text {
   text-transform: uppercase;
@@ -467,10 +562,27 @@ p {
   .donut-chart__text .big-text {
     font-size: 180%;
     line-height: 1.2; }
+  @media (max-width: 992px) {
+    .donut-chart__text {
+      font-size: 1.4rem;
+      top: 35%; } }
+  @media (max-width: 600px) {
+    .donut-chart__text {
+      font-size: 1.75rem;
+      top: 40%; } }
+  @media (max-width: 480px) {
+    .donut-chart__text {
+      font-size: 1.5rem;
+      top: 35%; } }
 
 .numbers-text {
+  float: right;
   width: 50%;
   padding: 0 15px; }
+  @media (max-width: 600px) {
+    .numbers-text {
+      display: block;
+      width: 100%; } }
 
 .numbers__title {
   font-size: 2.25rem;
@@ -562,6 +674,11 @@ p {
   background-repeat: no-repeat;
   background-position: center 0;
   background-size: 70%; }
+  @media (max-width: 480px) {
+    .about__item {
+      width: 50%;
+      padding-top: 40%;
+      padding-bottom: 4rem; } }
   .about__item--invested {
     background-image: url("../img/invested.png"); }
   .about__item--members {
@@ -615,6 +732,16 @@ p {
   .person img {
     max-width: 15rem;
     width: 100%; }
+  @media (max-width: 600px) {
+    .person {
+      width: 47%; }
+      .person:nth-child(2) ~ * {
+        display: none; } }
+  @media (max-width: 480px) {
+    .person {
+      width: 97%; }
+      .person:nth-child(1) ~ * {
+        display: none; } }
 
 .person__name {
   font-size: 1.5rem;
@@ -696,12 +823,23 @@ p {
     right: 0;
     background-image: linear-gradient(90deg, #0A0E21 90%, transparent 90%, transparent 100%);
     background-size: 10.2% 100%; }
+    @media (max-width: 480px) {
+      .organizations-slider:after {
+        display: none; } }
 
 .organization {
   width: 25%; }
   .organization img {
     max-width: 12rem;
     width: 100%; }
+  @media (max-width: 1200px) {
+    .organization {
+      padding: 1rem 1rem 0; } }
+  @media (max-width: 600px) {
+    .organization {
+      width: 50%; }
+      .organization:nth-child(2) ~ * {
+        display: none; } }
 
 .footer-middle {
   margin-left: auto;
@@ -709,7 +847,7 @@ p {
   max-width: 82rem;
   padding-left: 15px;
   padding-right: 15px;
-  padding-top: 12rem; }
+  padding-top: 10%; }
 
 .footer__logo {
   vertical-align: top;
@@ -736,7 +874,7 @@ p {
 
 .copyright {
   text-align: center;
-  padding: 2rem 15px;
+  padding: 35px 15px 2%;
   font-size: .75rem;
   letter-spacing: .25em;
   text-transform: uppercase;
