@@ -196,6 +196,8 @@ p {
   @include container(82rem, 0);
   text-align: center;
   height: 0;
+  position: relative;
+  z-index: 10;
 }
 
 .nav-top__list {
@@ -279,8 +281,12 @@ p {
 
 .header__dots {
   position: absolute;
-  right: 1rem;
+  right: 1%;
   top: 22%;
+
+  @media (max-width: $laptop-small) {
+    display: none;
+  }
 
   li {
     display: block;
@@ -291,7 +297,7 @@ p {
     margin: .6rem;
 
     &.active {
-      background-color: rgba($white, .7);
+      background-color: rgba($white, .6);
     }
   }
 }
