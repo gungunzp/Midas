@@ -6,22 +6,6 @@
  * Kroc Camen, and the H5BP dev community and team.
  */
 
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
-
-html, body {
-    box-sizing: border-box;
-    font-size: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-
-* {
-    box-sizing: inherit;
-}
 
 /*
  * Remove text-shadow in selection highlight:
