@@ -129,7 +129,8 @@ p {
   z-index: 10; }
 
 .nav-top__list {
-  width: 45%; }
+  width: 45%;
+  white-space: nowrap; }
   @media (max-width: 600px) {
     .nav-top__list {
       text-align: right;
@@ -157,6 +158,9 @@ p {
   font-size: .875rem;
   padding: 1rem 10%;
   white-space: nowrap; }
+  @media (max-width: 992px) {
+    .nav-top__link {
+      padding: 1rem 5%; } }
   @media (max-width: 600px) {
     .nav-top__link {
       padding: 1rem 0; } }
@@ -417,11 +421,6 @@ p {
       font-size: inherit;
       font-weight: inherit;
       opacity: 1; }
-    .input-wrap .input-text:-ms-input-placeholder {
-      color: inherit;
-      font-size: inherit;
-      font-weight: inherit;
-      opacity: 1; }
   .input-wrap:nth-child(1) {
     border-radius: 2rem 0 0 2rem;
     border-left-width: 2px;
@@ -595,9 +594,11 @@ p {
   vertical-align: top;
   width: 50%;
   position: relative;
-  padding: 7.5% 9%; }
+  padding: 7.5% 9%;
+  text-align: center; }
   .donut-chart img {
-    width: 100%; }
+    width: 100%;
+    max-width: 25rem; }
   @media (max-width: 600px) {
     .donut-chart {
       display: block;
@@ -611,7 +612,6 @@ p {
   color: #0A0E21;
   font-size: 1.75rem;
   line-height: 1.5;
-  text-align: center;
   width: 40%; }
   .donut-chart__text .big-text {
     font-size: 180%;

@@ -111,7 +111,7 @@ p {
   padding-right: $padding-sides;
 }
 
-@mixin placeholder($vendors: ('::-webkit-input-', ':-moz-', '::-moz-', ':-ms-input-'), $nested: '&', $opacity: 1, $color: inherit, $font-size: inherit, $font-weight: inherit) {
+@mixin placeholder($vendors: ('::-webkit-input-', ':-moz-', '::-moz-'), $nested: '&', $opacity: 1, $color: inherit, $font-size: inherit, $font-weight: inherit) {
   @each $vendor in $vendors {
     #{$nested}#{$vendor}placeholder {
       color: #{$color};
@@ -202,6 +202,7 @@ p {
 
 .nav-top__list {
   width: 45%;
+  white-space: nowrap;
 
   @media (max-width: $mobile-wide) {
     text-align: right;
@@ -239,6 +240,10 @@ p {
   font-size: .875rem;
   padding: 1rem 10%;
   white-space: nowrap;
+
+  @media (max-width: $laptop-small) {
+    padding: 1rem 5%;
+  }
 
   @media (max-width: $mobile-wide) {
     padding: 1rem 0;
@@ -759,9 +764,11 @@ p {
   width: 50%;
   position: relative;
   padding: 7.5% 9%;
+  text-align: center;
 
   img {
     width: 100%;
+    max-width: 25rem;
   }
 
   @media (max-width: $mobile-wide) {
@@ -778,7 +785,6 @@ p {
   color: $dark-blue;
   font-size: 1.75rem;
   line-height: 1.5;
-  text-align: center;
   width: 40%;
 
   .big-text {
