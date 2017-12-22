@@ -100,22 +100,6 @@ html {
   @media only screen and (max-width: $tablet) {
     font-size: 13px;
   }
-
-  // for pixel perfect
-  position: relative;
-  &:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: url(../img/pixelperfect_midas.jpg) no-repeat 0 0/contain;
-    width: 1920px - 15px; // - scroll area
-    height: 7317px;
-    opacity: .2;
-    pointer-events: none;
-    z-index: 999;
-    display: none; // temp
-  }
 }
 
 * {
