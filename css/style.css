@@ -177,10 +177,25 @@ p {
   padding-bottom: 6rem;
   padding-top: 4rem;
   background: url(../img/header_bg.jpg) no-repeat center 0;
-  background-size: 100% auto; }
+  background-size: 100% auto;
+  position: relative; }
   @media (max-width: 600px) {
     .header {
       background-size: auto 60%; } }
+
+.header__dots {
+  position: absolute;
+  right: 1rem;
+  top: 22%; }
+  .header__dots li {
+    display: block;
+    height: .7rem;
+    width: .7rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    margin: .6rem; }
+    .header__dots li.active {
+      background-color: rgba(255, 255, 255, 0.7); }
 
 .promo {
   margin-left: auto;
@@ -341,8 +356,7 @@ p {
 .sign-up {
   background-color: #fff;
   padding: 6rem 15px 8rem;
-  text-align: center;
-  position: relative; }
+  text-align: center; }
 
 .sign-up__title {
   color: #E4B523;
@@ -383,6 +397,26 @@ p {
     padding-left: 1rem;
     color: #E4B523;
     outline: none; }
+    .input-wrap .input-text::-webkit-input-placeholder {
+      color: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      opacity: 1; }
+    .input-wrap .input-text:-moz-placeholder {
+      color: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      opacity: 1; }
+    .input-wrap .input-text::-moz-placeholder {
+      color: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      opacity: 1; }
+    .input-wrap .input-text:-ms-input-placeholder {
+      color: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      opacity: 1; }
   .input-wrap:nth-child(1) {
     border-radius: 2rem 0 0 2rem;
     border-left-width: 2px;
@@ -424,14 +458,29 @@ p {
       .input-wrap.input-submit {
         display: block;
         width: 100%;
-        border-radius: 2rem; } }
+        border-radius: 2rem;
+        margin-top: 2rem; } }
     .input-wrap.input-submit:hover {
       background-color: #E4B523;
       border-color: #E4B523; }
 
 .token {
   text-align: center;
-  padding: 7.5rem 0 4rem; }
+  padding: 7.5rem 0 65px;
+  position: relative; }
+  .token:before, .token:after {
+    content: '';
+    position: absolute;
+    background-size: 2.95rem 100%;
+    left: 0;
+    right: 0;
+    height: 3rem; }
+  .token:before {
+    background-image: linear-gradient(40deg, #0A0E21 50%, transparent 50%, transparent 100%), linear-gradient(140deg, transparent 50%, #0A0E21 50%, #0A0E21 100%);
+    top: -2rem; }
+  .token:after {
+    background-image: linear-gradient(140deg, #0A0E21 50%, transparent 50%, transparent 100%), linear-gradient(40deg, transparent 50%, #0A0E21 50%, #0A0E21 100%);
+    bottom: -2rem; }
 
 .token-container {
   margin-left: auto;
@@ -526,8 +575,8 @@ p {
 
 .chart {
   background-color: #fff;
-  padding-bottom: 10%;
-  padding-top: 10.5%; }
+  padding-bottom: 11.5rem;
+  padding-top: 12.5rem; }
 
 .chart-container {
   margin-left: auto;
@@ -628,7 +677,17 @@ p {
   background-position: 0 3rem, 38% 10rem, 72% 7rem;
   background-size: 45%, 10%, 10%;
   padding-bottom: 12.5rem;
-  padding-top: 12rem; }
+  padding-top: 12rem;
+  position: relative; }
+  .about:before {
+    content: '';
+    position: absolute;
+    background-image: linear-gradient(140deg, #0A0E21 50%, transparent 50%, transparent 100%), linear-gradient(40deg, transparent 50%, #0A0E21 50%, #0A0E21 100%);
+    background-size: 2.95rem 100%;
+    bottom: -2rem;
+    left: 0;
+    right: 0;
+    height: 3rem; }
 
 .about-container {
   margin-left: auto;
@@ -704,6 +763,9 @@ p {
   font-size: 3.125rem;
   padding-bottom: 3.5rem;
   letter-spacing: .05em; }
+  @media (max-width: 992px) {
+    .people__title {
+      padding-right: 6.5rem; } }
 
 .people-slider {
   margin: 0 -1.5%;
@@ -713,15 +775,14 @@ p {
     content: '';
     height: 2.75rem;
     width: 2.75rem;
-    background: url(../img/angle_down_white.png) no-repeat center/contain;
     top: -6.5rem;
     cursor: pointer; }
   .people-slider:before {
-    right: 4.5rem;
-    transform: rotate(90deg); }
+    background: url(../img/angle_left_white.png) no-repeat center/contain;
+    right: 4.5rem; }
   .people-slider:after {
-    right: 1rem;
-    transform: rotate(-90deg); }
+    background: url(../img/angle_right_white.png) no-repeat center/contain;
+    right: 1rem; }
 
 .person {
   text-align: center;
@@ -801,13 +862,13 @@ p {
     content: '';
     height: 3rem;
     width: 3rem;
-    background: url(../img/angle_right_gold.png) no-repeat center/contain;
     top: 20%;
     cursor: pointer; }
   .organizations-wrap:before {
-    left: .2rem;
-    transform: rotate(180deg); }
+    background: url(../img/angle_left_gold.png) no-repeat center/contain;
+    left: .2rem; }
   .organizations-wrap:after {
+    background: url(../img/angle_right_gold.png) no-repeat center/contain;
     right: .2rem; }
 
 .organizations-slider {

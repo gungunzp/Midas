@@ -111,6 +111,18 @@ p {
   padding-right: $padding-sides;
 }
 
+@mixin placeholder($vendors: ('::-webkit-input-', ':-moz-', '::-moz-', ':-ms-input-'), $nested: '&', $opacity: 1, $color: inherit, $font-size: inherit, $font-weight: inherit) {
+  @each $vendor in $vendors {
+    #{$nested}#{$vendor}placeholder {
+      color: #{$color};
+      font-size: #{$font-size};
+      font-weight: #{$font-weight};
+      opacity: #{$opacity};
+      @content;
+    }
+  }
+}
+
 .container--inline {
   font-size: 0;
 
@@ -257,9 +269,30 @@ p {
   padding-top: 4rem;
   background: url(../img/header_bg.jpg) no-repeat center 0;
   background-size: 100% auto;
+  //background-attachment: fixed;
+  position: relative;
 
   @media (max-width: $mobile-wide) {
     background-size: auto 60%;
+  }
+}
+
+.header__dots {
+  position: absolute;
+  right: 1rem;
+  top: 22%;
+
+  li {
+    display: block;
+    height: .7rem;
+    width: .7rem;
+    background-color: rgba($white, .1);
+    border-radius: 50%;
+    margin: .6rem;
+
+    &.active {
+      background-color: rgba($white, .7);
+    }
   }
 }
 
@@ -444,19 +477,6 @@ p {
   background-color: $white;
   padding: 6rem $tile-gutter 8rem;
   text-align: center;
-  position: relative;
-
-  // TODO: angled border
-  //&:after {
-  //	content: '';
-  //	position: absolute;
-  //	background-color: $gold;
-  //	left: 0;
-  //	right: 0;
-  //	bottom: -2.5rem;
-  //	height: 2rem;
-  //	opacity: .5;
-  //}
 }
 
 .sign-up__title {
@@ -501,6 +521,7 @@ p {
     padding-left: 1rem;
     color: $gold;
     outline: none;
+    @include placeholder();
   }
 
   &:nth-child(1) {
@@ -554,6 +575,7 @@ p {
       display: block;
       width: 100%;
       border-radius: 2rem;
+      margin-top: 2rem;
     }
 
     &:hover {
@@ -568,7 +590,32 @@ p {
 
 .token {
   text-align: center;
-  padding: 7.5rem 0 4rem;
+  padding: 7.5rem 0 65px;
+  position: relative;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    background-size: 2.95rem 100%;
+    left: 0;
+    right: 0;
+    height: 3rem;
+  }
+
+  &:before {
+    background-image:
+            linear-gradient(40deg, $dark-blue 50%, transparent 50%, transparent 100%),
+            linear-gradient(140deg, transparent 50%, $dark-blue 50%, $dark-blue 100%);
+    top: -2rem;
+  }
+
+  &:after {
+    background-image:
+            linear-gradient(140deg, $dark-blue 50%, transparent 50%, transparent 100%),
+            linear-gradient(40deg, transparent 50%, $dark-blue 50%, $dark-blue 100%);
+    bottom: -2rem;
+  }
 }
 
 .token-container {
@@ -692,8 +739,8 @@ p {
 
 .chart {
   background-color: $white;
-  padding-bottom: 10%;
-  padding-top: 10.5%;
+  padding-bottom: 11.5rem;
+  padding-top: 12.5rem;
 }
 
 .chart-container {
@@ -820,31 +867,33 @@ p {
 .about {
   background-repeat: no-repeat;
   background-image:
-          url(../img/hexagon_bg.png),
-          url(../img/triangles_bg_1.png),
-          url(../img/triangles_bg_2.png);
+    url(../img/hexagon_bg.png),
+    url(../img/triangles_bg_1.png),
+    url(../img/triangles_bg_2.png);
   background-position:
-          0 3rem,
-          38% 10rem,
-          72% 7rem;
+    0 3rem,
+    38% 10rem,
+    72% 7rem;
   background-size:
-          45%,
-          10%,
-          10%;
+    45%,
+    10%,
+    10%;
   padding-bottom: 12.5rem;
   padding-top: 12rem;
-  //position: relative;
+  position: relative;
 
-  //&:after {
-  //	content: '';
-  //	background: url(../img/border_angled.png) no-repeat center -20%/cover;
-  //	position: absolute;
-  //	height: 3.125rem;
-  //	width: 100%;
-  //	bottom: 0;
-  //	left: 0;
-  //	right: 0;
-  //}
+  &:before {
+    content: '';
+    position: absolute;
+    background-image:
+            linear-gradient(140deg, $dark-blue 50%, transparent 50%, transparent 100%),
+            linear-gradient(40deg, transparent 50%, $dark-blue 50%, $dark-blue 100%);
+    background-size: 2.95rem 100%;
+    bottom: -2rem;
+    left: 0;
+    right: 0;
+    height: 3rem;
+  }
 }
 
 .about-container {
@@ -918,6 +967,10 @@ p {
   font-size: 3.125rem;
   padding-bottom: 3.5rem;
   letter-spacing: .05em;
+
+  @media (max-width: $laptop-small) {
+    padding-right: 6.5rem;
+  }
 }
 
 .people-slider {
@@ -930,19 +983,18 @@ p {
     content: '';
     height: 2.75rem;
     width: 2.75rem;
-    background: url(../img/angle_down_white.png) no-repeat center/contain;
     top: -6.5rem;
     cursor: pointer;
   }
 
   &:before {
+    background: url(../img/angle_left_white.png) no-repeat center/contain;
     right: 4.5rem;
-    transform: rotate(90deg);
   }
 
   &:after {
+    background: url(../img/angle_right_white.png) no-repeat center/contain;
     right: 1rem;
-    transform: rotate(-90deg);
   }
 }
 
@@ -1052,17 +1104,17 @@ p {
     content: '';
     height: 3rem;
     width: 3rem;
-    background: url(../img/angle_right_gold.png) no-repeat center/contain;
     top: 20%;
     cursor: pointer;
   }
 
   &:before {
+    background: url(../img/angle_left_gold.png) no-repeat center/contain;
     left: .2rem;
-    transform: rotate(180deg);
   }
 
   &:after {
+    background: url(../img/angle_right_gold.png) no-repeat center/contain;
     right: .2rem;
   }
 }
